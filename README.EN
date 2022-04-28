@@ -1,0 +1,49 @@
+Crossplatform implementation of data storage / dataset management system embedded in process (hereafter EDMS).
+Published EDMS comprises the storage implementations per se (14 dynamic libraries) and demo-application (source code + binaries).
+Platforms supported: Linux, Windows (32-bits only).
+There are three types of EDMS (see demo/repo/repository.cfg):
+- type 0 – naive, trivial implementation which keeps all the datasets in RAM;
+- type 1 – reference implementation which keeps the datasets in RAM and Persistent Storage (files, DB). Cache replacement policies implemented for demo (see demo/repo/data_model.cfg) : LRU, MRU, LFU, GDSF, Buble, Random;
+- type 2 –  implementation optimized as of RAM consumption, it keeps the datasets in RAM and Persistent Storage (POSIX mmap/MMF) as well. Cache replacement policies implemented for demo (see demo/repo/data_model.cfg) : LRU, MRU, LFU, GDSF, Buble, Random.
+
+HOW TO RUN DEMO-APPLICATION
+1. Download the directories (binary files and shell-scripts), keep their structure in your local file-system.
+2. Run our demo-application binary with appropriate shell-script developed for your platform:
+demo/repo/run.sh -- Linux
+demo/repo/run.cmd -- Windows
+
+HOW TO BUILD DEMO-APPLICATION
+Prerequisites:
+1) gcc tool-chain must be installed on your WS. We build our code with gcc starting from version 5.1.0 up to 11.2.
+For Linux-users only:
+ the 32-bit libraries must be installed (gcc-multilib, g++-multilib), glibc version 2.23 or higher.
+For Windows-users only:
+ Boost header-files must be downloaded in libs32/Boost on your own (h/hpp-files only!). Boost version 1.65.
+ Another option: use the Boost.zip provided: https://drive.google.com/file/d/1UCQE6nfUHOlEHXQSQyw7_A755_vN39Ll
+
+2) Cmake must be installed on your WS, version 3.8 or higher.
+
+HOW TO BUILD:
+1. Download the directories (binary files of all the libraries, source code of demo-application, shell-scripts), keep their structure in your local file-system.
+2. Run the appropriate shell-script developed for your platform:
+demo/repo/run_cmake.sh -- Linux
+demo/repo/run_cmake.cmd -- Windows
+
+A FEW NOTES FOR CONSIDERED PEOPLE.
+1. We run our software on 32- and 64-bit platforms many years. The binaries provided in libs32 have been built for 32-bit platforms. The reason to publish ‘-m32’ versions only is that simple - we no longer support type 0 implementation for 64-bit platforms and the 64-bit suit of our libraries would cut the alternative storage implementations we intended to publish.
+2. Public interfaces have been developed by Alexei A. Ivankov. He does is aware of the fact the APIs are not perfect. The reason to keep up some “bloated” API is trivial one. The storage implementations are merely a small part of a framework the same author has been developed over many years. The perfect APIs have been sacrificed for backward compatibility, i.e. to run legacy-code of the framework components.
+
+ACKNOWLEDGMENTS
+The type 0 storage has been developing over many years by Sidorovskaya Anastasia A., Gavrilov Andrey O., Tetyukhin Artyom S.
+
+The type 1 storage was provided through the courtesy of Manuilov Georgy A. He developed that reference implementation.
+
+The type 2 storage has been developed by Alexei A. Ivankov.
+
+The credit belongs to all the aforementioned Authors.
+
+Their supervisor Dr. Alexei A. Ivankov is the only one responsible for any software design flaws, issues or bugs (if any he was not aware of).
+
+
+P.S. Please, don’t bother us with questions sort of: “Why does demo—application build fail?”/”Where is the source code of your libraries?” and so forth.
+s

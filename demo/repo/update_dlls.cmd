@@ -1,0 +1,12 @@
+copy /Y /B ..\..\lib32\Logger\bin\Debug\Loggerd.dll                               bin\Debug\*.*
+copy /Y /B ..\..\lib32\config_parser\bin\Debug\config_parserd.dll                 bin\Debug\*.*
+copy /Y /B ..\..\lib32\DataSet\bin\Debug\DataSetd.dll                             bin\Debug\*.*
+copy /Y /B ..\..\lib32\RepoCache\bin\Debug\RepoCached.dll                         bin\Debug\*.*
+copy /Y /B ..\..\lib32\RepoCacheLogic\bin\Debug\RepoCacheLogicd.dll               bin\Debug\*.*
+copy /Y /B ..\..\lib32\RepoDirectory\bin\Debug\RepoDirectoryd.dll                 bin\Debug\*.*
+copy /Y /B ..\..\lib32\RepoPersistentStorage\bin\Debug\RepoPersistentStoraged.dll bin\Debug\*.*
+copy /Y /B ..\..\lib32\RPSReader\bin\Debug\RPSReaderd.dll                         bin\Debug\*.*
+copy /Y /B ..\..\lib32\RepoTransactions\bin\Debug\RepoTransactionsd.dll           bin\Debug\*.*
+copy /Y /B ..\..\lib32\repo_grammar\bin\Debug\repo_grammard.dll                   bin\Debug\*.*
+copy /Y /B ..\..\lib32\repo\bin\Debug\repod.dll                                   bin\Debug\*.*
+copy /Y /B ..\..\lib32\Key\bin\Debug\Keyd.dll                                     bin\Debug\*.*
