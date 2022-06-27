@@ -2,9 +2,11 @@ Crossplatform implementation of data storage / dataset management system embedde
 Published EDMS comprises the storage implementations per se (14 dynamic libraries) and demo-application (source code + binaries).
 Platforms supported: Linux, Windows (32-bits only).
 There are three types of EDMS (see demo/repo/repository.cfg):
-- type 0 ñ naive, trivial implementation which keeps all the datasets in RAM;
-- type 1 ñ reference implementation which keeps the datasets in RAM and Persistent Storage (files, DB). Cache replacement policies implemented for demo (see demo/repo/data_model.cfg) : LRU, MRU, LFU, GDSF, Buble, Random;
-- type 2 ñ  implementation optimized as of RAM consumption, it keeps the datasets in RAM and Persistent Storage (POSIX mmap/MMF) as well. Cache replacement policies implemented for demo (see demo/repo/data_model.cfg) : LRU, MRU, LFU, GDSF, Buble, Random.
+- type 0 ‚Äì naive, trivial implementation which keeps all the datasets in RAM;
+- type 1 ‚Äì reference implementation which keeps the datasets in RAM and Persistent Storage (files, DB). Cache replacement policies implemented for demo (see demo/repo/data_model.cfg) : LRU, MRU, LFU, GDSF, Buble, Random;
+- type 2 ‚Äì  implementation optimized as of RAM consumption, it keeps the datasets in RAM and Persistent Storage (POSIX mmap/MMF) as well. Cache replacement policies implemented for demo (see demo/repo/data_model.cfg) : LRU, MRU, LFU, GDSF, Buble, Random.
+
+See the detailed description of the solution in [the attached paper](https://github.com/flower-flavour/embedded-repo/blob/master/Ivankov-Manuilov-en.pdf).
 
 HOW TO RUN DEMO-APPLICATION
 1. Download the directories (binary files and shell-scripts), keep their structure in your local file-system.
@@ -30,8 +32,8 @@ demo/repo/run_cmake.sh -- Linux
 demo/repo/run_cmake.cmd -- Windows
 
 A FEW NOTES FOR CONSIDERED PEOPLE.
-1. We run our software on 32- and 64-bit platforms many years. The binaries provided in libs32 have been built for 32-bit platforms. The reason to publish ë-m32í versions only is that simple - we no longer support type 0 implementation for 64-bit platforms and the 64-bit suit of our libraries would cut the alternative storage implementations we intended to publish.
-2. Public interfaces have been developed by Alexei A. Ivankov. He does is aware of the fact the APIs are not perfect. The reason to keep up some ìbloatedî API is trivial one. The storage implementations are merely a small part of a framework the same author has been developed over many years. The perfect APIs have been sacrificed for backward compatibility, i.e. to run legacy-code of the framework components.
+1. We run our software on 32- and 64-bit platforms many years. The binaries provided in libs32 have been built for 32-bit platforms. The reason to publish ‚Äò-m32‚Äô versions only is that simple - we no longer support type 0 implementation for 64-bit platforms and the 64-bit suit of our libraries would cut the alternative storage implementations we intended to publish.
+2. Public interfaces have been developed by Alexei A. Ivankov. He does is aware of the fact the APIs are not perfect. The reason to keep up some ‚Äúbloated‚Äù API is trivial one. The storage implementations are merely a small part of a framework the same author has been developed over many years. The perfect APIs have been sacrificed for backward compatibility, i.e. to run legacy-code of the framework components.
 
 ACKNOWLEDGMENTS
 The type 0 storage has been developing over many years by Sidorovskaya Anastasia A., Gavrilov Andrey O., Tetyukhin Artyom S.
@@ -45,5 +47,5 @@ The credit belongs to all the aforementioned Authors.
 Their supervisor Dr. Alexei A. Ivankov is the only one responsible for any software design flaws, issues or bugs (if any he was not aware of).
 
 
-P.S. Please, donít bother us with questions sort of: ìWhy does demoóapplication build fail?î/îWhere is the source code of your libraries?î and so forth.
+P.S. Please, don‚Äôt bother us with questions sort of: ‚ÄúWhy does demo‚Äîapplication build fail?‚Äù/‚ÄùWhere is the source code of your libraries?‚Äù and so forth.
 s
