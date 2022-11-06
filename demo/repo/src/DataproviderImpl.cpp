@@ -150,6 +150,7 @@ int DataproviderImpl::run(size_t & sizeRequestArr,
                 assert(_RC_SUCCESS_ == rc);
             }
     }
+    delete pRequestArr;
     return _RC_SUCCESS_;
 }
 
